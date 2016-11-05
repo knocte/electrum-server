@@ -86,6 +86,9 @@ fi
 
 
 echo "checking $path"
+
+db_url="http://foundry.electrum.org/leveldb-dump/electrum-fulltree-100-latest.tar.gz"
+
 # download database
 if [ ! -d $path ]; then
     echo "Database not found in $path."
@@ -93,7 +96,7 @@ if [ ! -d $path ]; then
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
 	mkdir -p $path
-	wget -O - "http://foundry.electrum.org/leveldb-dump/electrum-fulltree-100-latest.tar.gz" | tar --extract --gunzip --strip-components 1 --directory $path --file -
+	wget -O - $db_url | tar --extract --gunzip --strip-components 1 --directory $path --file - || (rm -rf $path && exit 1)
     fi
 fi
 
