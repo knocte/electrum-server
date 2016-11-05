@@ -94,6 +94,10 @@ if [ ! -d $path ]; then
     echo "Database not found in $path."
     read -p "Do you want to download it from the Electrum foundry to $path ? " -n 1 -r
     echo
+    echo
+    echo "Downloading... (if you decide to abort the download, remove $path afterwards)"
+    echo
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
 	mkdir -p $path
 	wget -O - $db_url | tar --extract --gunzip --strip-components 1 --directory $path --file - || (rm -rf $path && exit 1)
