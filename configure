@@ -132,5 +132,5 @@ fi
 # finish
 echo "Configuration written to $electrum_config."
 echo "Please edit this file to finish the configuration."
-echo "If you have not done so, please run 'python setup.py install'"
+echo "If you have not done so, please run 'sudo python setup.py install'"
 echo "Then, run 'electrum-server' to start the daemon"
