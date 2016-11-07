@@ -151,7 +151,7 @@ We will download the latest git snapshot for Electrum to configure and install i
     $ cd ~
     $ git clone https://github.com/spesmilo/electrum-server.git
     $ cd electrum-server
-    $ sudo apt-get install python-setuptools
+    $ sudo apt-get install python-setuptools libleveldb-dev
     $ sudo ./configure
     $ sudo python setup.py install
 
